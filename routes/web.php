@@ -13,3 +13,8 @@
 
 get_static_routes() ;
 get_dynamic_routes();
+
+Route::middleware("front")->name('front.')->group(function () {
+    Route::get("/", "FrontController@home")->name('home');
+    Route::get("contents", "FrontController@listContents")->name('contents');
+});

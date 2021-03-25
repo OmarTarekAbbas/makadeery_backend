@@ -13,14 +13,14 @@ class FrontController extends Controller
     /**
      * Method index
      *
-     * @param Request $request
+     * @param Illuminate\Http\Request $request
      *
      * @return \Illuminate\Contracts\View\View
      */
     public function home(Request $request)
     {
         $populars = Content::search($this->filters())->latest()->get();
-
+        return $populars;
         return view("front.home", compact("populars"));
     }
 
@@ -29,7 +29,7 @@ class FrontController extends Controller
      *
      * return contents depend on some request value like (category_id, search_value, op_id)
      *
-     * @param Request $request
+     * @param Illuminate\Http\Request $request
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */

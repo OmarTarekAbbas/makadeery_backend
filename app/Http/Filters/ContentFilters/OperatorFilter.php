@@ -17,7 +17,7 @@ class OperatorFilter implements Filter
      */
     public function apply(Builder $builder, $value)
     {
-        return $builder->whereHas("rbts",function(Builder $query) use($value) {
+        return $builder->whereHas("posts",function(Builder $query) use($value) {
             $query->where('operator_id', $value);
         });
     }

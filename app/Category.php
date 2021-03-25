@@ -52,7 +52,7 @@ class Category extends Model
     {
         return $query->whereHas("contents",function($builder){
             if(request()->filled("op")){
-                $builder->whereHas("rbts",function($query) {
+                $builder->whereHas("posts",function($query) {
                     $query->where('operator_id', request("op"));
                 });
             }
