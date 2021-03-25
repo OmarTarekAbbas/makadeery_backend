@@ -41,4 +41,22 @@ class Category extends Model
     return $this->belongsTo('App\Provider','provider_id','id');
   }
 
+    /**
+     * Method scopeOperators
+     *
+     * @param Builder $query
+     *
+     * @return Builder
+     */
+    public function scopeOperators($query)
+    {
+        return $query->whereHas("contents",function($builder){
+            if(request()->filled("op")){
+                $builder->whereHas("posts",function($query) {
+                    $query->where('operator_id', request("op"));
+                });
+            }
+        });
+    }
+
 }

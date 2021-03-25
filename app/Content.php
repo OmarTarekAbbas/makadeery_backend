@@ -3,9 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Traits\Searchable;
 class Content extends Model
 {
+  use Searchable;
   protected $fillable = ['title','path','image_preview','content_type_id','category_id','patch_number'];
 
   ///////////////////set image///////////////////////////////

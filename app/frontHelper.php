@@ -44,3 +44,43 @@ function general_service() {
     }
     return $generalService;
 }
+
+if (! function_exists('categories')) {
+    /**
+     * Return All Catgeory.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    function categories()
+    {
+        $categories = \App\Category::operators()->get();
+        return $categories;
+    }
+}
+
+if (! function_exists('get_limit_paginate')) {
+    /**
+     * Method get_limit_paginate to get paginate size
+     *
+     * @return string
+     */
+    function get_limit_paginate()
+    {
+        return setting('page_limit');
+    }
+}
+
+if (! function_exists('setting')) {
+    /**
+     * Method setting
+     *
+     * @param string $key
+     *
+     * @return string
+     */
+    function setting($key)
+    {
+        $data = \DB::table('settings')->where('key', 'like', '%' . $key . '%')->first();
+        return $data ? $data->value : '';
+    }
+}
