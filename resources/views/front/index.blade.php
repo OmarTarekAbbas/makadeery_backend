@@ -1,111 +1,69 @@
-<!DOCTYPE html>
-<html lang="en" style="height:100%;">
+<!-- Start Header -->
+@include("front.header")
+<!-- End Header -->
 
-<head>
-    <meta charset="utf-8">
-    <!--IE Compatibility Meta-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--Mobile Meta-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{!! DB::table('settings')->where('key','like','%title%')->first()->value !!}</title>
-    <link rel="stylesheet" type="text/css" href="{{url('assets/front/')}}/css/animate.css">
-    <link rel="stylesheet" type="text/css" href="{{url('assets/front/')}}/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="{{url('assets/front/')}}/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{url('assets/front/')}}/css/main-style.css">
-    <!--[if lt IE 9]>
-      <script src="{{url('assets/front/')}}/js/html5shiv.min.js"></script>
-      <script src="{{url('assets/front/')}}/js/respond.min.js"></script>
-      <![endif]-->
+<section class="all_ramdan">
+    <div class="row m-0 w-100">
+        <div class="col-12">
+            <h4 class="ramdan_menu text-center text-capitalize rounded">منيو رمضان</h5>
+        </div>
 
-    <script type="text/javascript">
-        if (screen.width <= 600) {
-            document.location = "{{url('index')}}";
-        }
+        <div class="col-6">
+            <a href="category.php">
+                <div class="ramdan_category">
+                    <img class="ramdan_category_img" src="{{asset('front')}}/images/Cutting/Home/Photos/01.jpg"
+                        alt="Italy Food">
 
-    </script>
+                    <p class="ramdan_category_title text-center text-capitalize">ايطالى</p>
+                </div>
+            </a>
+        </div>
 
-    <style>
-        .the-frame {
-            padding: 0;
-            margin: 0;
-            border-radius: 30px;
-            border-top: 15px solid #a0a19f;
-            border-bottom: 15px solid #a0a19f;
-            border-right: 15px solid #a0a19f;
-            border-left: 15px solid #a0a19f;
-            box-shadow: 0 6px 10px 0 rgba(245, 205, 205, 0.14), 0 1px 18px 0 rgba(247, 172, 172, 0.12), 0 3px 5px -1px rgba(158, 85, 85, 0.3);
-            width: 370px;
-            height: 600px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+        <div class="col-6">
+            <a href="category.php">
+                <div class="ramdan_category">
+                    <img class="ramdan_category_img" src="{{asset('front')}}/images/Cutting/Home/Photos/02.jpg"
+                        alt="Egypt Food">
 
-        .main .filter_services {
-            height: 200px !important;
-        }
+                    <p class="ramdan_category_title text-center text-capitalize">مصرى</p>
+                </div>
+            </a>
+        </div>
 
-        @media only screen and (max-width: 600px) {
-            .the-frame {
-                display: none;
-            }
+        <div class="col-6">
+            <a href="category.php">
+                <div class="ramdan_category">
+                    <img class="ramdan_category_img" src="{{asset('front')}}/images/Cutting/Home/Photos/03.jpg"
+                        alt="Chinese Food">
 
-            .enter {
-                display: block;
-            }
+                    <p class="ramdan_category_title text-center text-capitalize">صينى</p>
+                </div>
+            </a>
+        </div>
 
-            .enter h4 {
-                padding: 20px;
-                text-align: center;
-                color: #f3e5b8;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                margin-right: -50%;
-                transform: translate(-50%, -50%);
-            }
+        <div class="col-6">
+            <a href="category.php">
+                <div class="ramdan_category">
+                    <img class="ramdan_category_img" src="{{asset('front')}}/images/Cutting/Home/Photos/04.jpg"
+                        alt="Hendi Food">
 
-            .enter a {
-                font-weight: bold;
-                font-size: 18px;
-                color: #333;
-                padding: 5px 10px;
-                background-color: #f3e5b8;
-                border-radius: 5px;
-                text-decoration: none;
-                position: absolute;
-                top: 60%;
-                left: 45%;
-                margin-right: -50%;
-                transform: translate(-50%, -50%);
-            }
-        }
+                    <p class="ramdan_category_title text-center text-capitalize">هندى</p>
+                </div>
+            </a>
+        </div>
 
-        @media only screen and (min-width: 600px) {
-            .enter {
-                display: none;
-            }
-        }
+        <div class="col-12">
+            <a href="category.php">
+                <div class="ramdan_category ramdan_category_last">
+                    <img class="ramdan_category_img" src="{{asset('front')}}/images/Cutting/Home/Photos/05.jpg"
+                        alt="Fast Food">
 
-    </style>
-</head>
-
-<body>
-    <div class="the-frame">
-        <iframe class="full-screen-preview__frame" src="{{url('index')}}" name="preview-frame" frameborder="0" noresize="noresize" data-view="fullScreenPreview" style="height: 570px; width: 340px; border-radius: 10px;">
-        </iframe>
+                    <p class="ramdan_category_title text-center text-capitalize">اكلات سريعة</p>
+                </div>
+            </a>
+        </div>
     </div>
-    <div class="enter">
-        <h4>انت الان على الهاتف للدخول اضغط هنا</h4>
-        <a href="{{url('index')}}" class="wow pulse" data-wow-delay="300ms" data-wow-iteration="infinite" data-wow-duration="1.5s">دخول</a>
-    </div>
-
-    <script src="{{url('assets/front/')}}/js/wow.min.js"></script>
-    <script>
-        new WOW().init();
-
-    </script>
-</body>
-
-</html>
+</section>
+<!-- Start Footer -->
+@include("front.footer")
+<!-- End Footer -->

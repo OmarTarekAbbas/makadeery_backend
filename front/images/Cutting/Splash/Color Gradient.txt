@@ -1,0 +1,2 @@
+Red : #f60811
+Dark Red: #ac1e23

@@ -20,8 +20,8 @@ class FrontController extends Controller
     public function home(Request $request)
     {
         $populars = Content::search($this->filters())->latest()->get();
-        return $populars;
-        return view("front.home", compact("populars"));
+        // return $populars;
+        return view("front.index", compact("populars"));
     }
 
     /**
