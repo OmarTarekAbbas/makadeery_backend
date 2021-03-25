@@ -19,9 +19,9 @@
 <div class="form-group">
     <label class="col-sm-3 col-lg-2 control-label">Category<span class="text-danger">*</span></label>
     <div class="col-sm-9 col-lg-10 controls">
-    
 
-        <select name="browser" class='form-control chosen-rtl'>
+
+        <select name="category_id" class='form-control chosen-rtl'>
         @foreach($categorys as $category)
             <optgroup label="{{$category->title}}">
                 @foreach($category->sub_cats as $sub_category)
@@ -29,7 +29,7 @@
                 @endforeach
             </optgroup>
         @endforeach
-           
+
         </select>
     </div>
 </div>

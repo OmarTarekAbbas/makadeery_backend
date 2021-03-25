@@ -70,7 +70,7 @@ class ContentController extends Controller
         })
         ->addColumn('Category', function(Content $content) {
             if(isset($content->category))
-              return $content->category->title;
+              return $content->category->title .'-'.$content->category->cat->title;
         })
         ->addColumn('patch number', function(Content $content) {
               return $content->patch_number;

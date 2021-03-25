@@ -126,7 +126,7 @@ class PostController extends Controller
      //dd($random);
       foreach ($posts as $post) {
         Post::find($post->id)->update([
-          'url' => url('view_content/'.$request->content_id.'?op_id='.$post->operator_id.'&post_id='.$random)
+          'url' => url('view_content/'.$request->content_id.'?OpID='.$post->operator_id)
         ]);
       }
 
@@ -188,7 +188,7 @@ class PostController extends Controller
       $post = Post::findOrFail($id);
       $random = mt_rand(100000,999999);
       $content = Content::findOrFail($request->content_id);
-      $post->update($input+['operator_id' => $request->operator_id[0] , 'url' => url('view_content/'.$request->content_id.'?op_id='.$request->operator_id[0].'&post_id='.$random) , 'user_id' => Auth::id()]);
+      $post->update($input+['operator_id' => $request->operator_id[0] , 'url' => url('view_content/'.$request->content_id.'?OpID='.$request->operator_id[0]) , 'user_id' => Auth::id()]);
 
       \Session::flash('success', 'Post Update Successfully');
       return redirect('content/'.$request->content_id);
