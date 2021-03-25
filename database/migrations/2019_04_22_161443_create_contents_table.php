@@ -20,7 +20,7 @@ class CreateContentsTable extends Migration {
 			$table->string('image_preview', 191)->nullable();
 			$table->integer('content_type_id')->unsigned()->index('contents_content_type_id_foreign');
 			$table->integer('category_id')->unsigned()->index('contents_category_id_foreign');
-			$table->string('patch_number', 191)->nullable();
+			// $table->string('patch_number', 191)->nullable();
 			$table->timestamps();
 		});
 	}

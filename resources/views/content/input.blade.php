@@ -49,12 +49,12 @@
     </div>
 </div>
 
-<div class="form-group">
+<!-- <div class="form-group">
     <label class="col-sm-3 col-lg-2 control-label">Patch Number </label>
     <div class="col-sm-9 col-lg-10 controls">
         {!! Form::number('patch_number',null,['placeholder'=>'Patch Number','class'=>'form-control','min'=>0]) !!}
     </div>
-</div>
+</div> -->
 
 @if($content)
 
