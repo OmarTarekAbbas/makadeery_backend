@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2021 at 09:22 AM
+-- Generation Time: Mar 25, 2021 at 01:07 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -87,7 +87,7 @@ CREATE TABLE `contents` (
 --
 
 INSERT INTO `contents` (`id`, `title`, `path`, `image_preview`, `content_type_id`, `category_id`, `patch_number`, `created_at`, `updated_at`) VALUES
-(1, 'مقادير لحوم ايطالي', '161665788423.mp4', '161665788417.jpeg', 5, 6, NULL, '2021-03-25 05:38:04', '2021-03-25 05:42:09'),
+(1, 'مقادير لحوم ايطالي', '1616672691372.mp4', '1616672691862.jpg', 5, 6, NULL, '2021-03-25 05:38:04', '2021-03-25 09:44:51'),
 (2, 'مقادير اسماك ايطالي', '1616658168651.mp4', '1616658168758.jpg', 5, 7, NULL, '2021-03-25 05:42:48', '2021-03-25 05:49:27'),
 (3, 'مقادير فراخ ايطالي', '1616658195174.mp4', '161665819468.jpg', 5, 8, NULL, '2021-03-25 05:43:15', '2021-03-25 05:43:15'),
 (4, 'مقادير لحوم مصري', '1616658599249.mp4', '1616658599130.jpg', 5, 9, NULL, '2021-03-25 05:49:59', '2021-03-25 05:49:59'),
@@ -234,7 +234,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (43, '2019_12_30_143103_add_provider_routes', 2),
 (44, '2019_12_30_161445_add_foreign_keys_to_categoriesproviders_table', 2),
 (45, '2020_01_01_082734_add_provider_id_Rbtcodes_table', 2),
-(46, '2020_01_22_091056_rename_routes_route', 2);
+(46, '2020_01_22_091056_rename_routes_route', 2),
+(47, '2019_12_31_091104_add_makadeery', 3),
+(48, '2021_03_25_145717_add_setting_value', 3);
 
 -- --------------------------------------------------------
 
@@ -303,13 +305,6 @@ CREATE TABLE `posts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `posts`
---
-
-INSERT INTO `posts` (`id`, `published_date`, `active`, `url`, `content_id`, `operator_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, '2021-03-25', 1, 'http://localhost/makadeery_backend/view_content/2?OpID=2', 2, 2, 1, '2021-03-25 06:03:42', '2021-03-25 06:11:16');
 
 -- --------------------------------------------------------
 
@@ -685,7 +680,8 @@ CREATE TABLE `settings` (
 INSERT INTO `settings` (`id`, `key`, `value`, `created_at`, `updated_at`, `type_id`, `order`) VALUES
 (25, 'uploadAllow', 'video', '2018-02-04 10:04:09', '2019-02-11 13:09:42', 6, 0),
 (27, 'enable_testing', '0', '2019-02-11 13:14:30', '2019-02-11 13:15:45', 7, 0),
-(28, 'content_type_flag', '0', '2019-03-07 08:50:04', '2019-03-14 06:54:06', 7, 0);
+(28, 'content_type_flag', '0', '2019-03-07 08:50:04', '2019-03-14 06:54:06', 7, 0),
+(29, 'enable_delete', '0', NULL, '2021-03-25 07:53:57', 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -1038,7 +1034,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `contents`
 --
 ALTER TABLE `contents`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `content_types`
@@ -1068,7 +1064,7 @@ ALTER TABLE `languages`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `operators`
@@ -1086,7 +1082,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `providers`
@@ -1134,7 +1130,7 @@ ALTER TABLE `scaffoldinterfaces`
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `static_bodies`
