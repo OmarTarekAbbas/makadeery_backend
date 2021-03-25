@@ -7,19 +7,19 @@
         <div class="col-12">
             <h4 class="ramdan_menu text-center text-capitalize rounded">منيو رمضان</h5>
         </div>
-
+        @foreach ($categorys as $category)
         <div class="col-6">
             <a href="category.php">
                 <div class="ramdan_category">
-                    <img class="ramdan_category_img" src="{{asset('front')}}/images/Cutting/Home/Photos/01.jpg"
-                        alt="Italy Food">
+                    <img class="ramdan_category_img" src="{{$category->image}}" alt="{{$category->title}}">
 
-                    <p class="ramdan_category_title text-center text-capitalize">ايطالى</p>
+                    <p class="ramdan_category_title text-center text-capitalize">{{$category->title}}</p>
                 </div>
             </a>
         </div>
+        @endforeach
 
-        <div class="col-6">
+        <!-- <div class="col-6">
             <a href="category.php">
                 <div class="ramdan_category">
                     <img class="ramdan_category_img" src="{{asset('front')}}/images/Cutting/Home/Photos/02.jpg"
@@ -61,7 +61,8 @@
                     <p class="ramdan_category_title text-center text-capitalize">اكلات سريعة</p>
                 </div>
             </a>
-        </div>
+        </div> -->
+
     </div>
 </section>
 <!-- Start Footer -->

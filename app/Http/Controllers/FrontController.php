@@ -7,6 +7,7 @@ use App\Http\Filters\ContentFilters\CategoryFilter;
 use App\Http\Filters\ContentFilters\GlobalSearchFilter;
 use App\Http\Filters\ContentFilters\OperatorFilter;
 use App\Content;
+use App\Category;
 
 class FrontController extends Controller
 {
@@ -19,9 +20,10 @@ class FrontController extends Controller
      */
     public function home(Request $request)
     {
+        $categorys = Category::whereNull('parent_id')->get();
         $populars = Content::search($this->filters())->latest()->get();
-        // return $populars;
-        return view("front.index", compact("populars"));
+        // dd( $categorys);
+        return view("front.index", compact("populars","categorys"));
     }
 
     /**
