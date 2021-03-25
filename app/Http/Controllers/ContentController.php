@@ -49,37 +49,36 @@ class ContentController extends Controller
         ->addColumn('title', function(Content $content) {
             return $content->title;
         })
-        ->addColumn('content', function(Content $content) {
-            if($content->type->id == 1)
-            return $content->path;
-            elseif($content->type->id == 2)
-            return $content->path;
-            elseif($content->type->id == 3)
-            return '<img src="'.url(isset($content->path)?$content->path: '').'" alt="" style="width:250px" height="200px">';
-            elseif($content->type->id == 4)
-            return '<audio controls src="'.url(isset($content->path)?$content->path: '').'" style="width:100%"></audio>';
-            elseif($content->type->id == 5)
-            return '<video src="'.url(isset($content->path)?$content->path: '').'" style="width:250px;height:200px" height="200px" controls poster="'.url(isset($content->image_preview)?$content->image_preview: '').'"></video>';
-            elseif($content->type->id == 6)
-            return '<iframe src="'.$content->path.'" width="250px" height="200px"></iframe>';
-            elseif($content->type->id == 7)
-            return '<a href="'.$content->path.'">'.$content->path.'</a>' ;
-        })
+        // ->addColumn('content', function(Content $content) {
+        //     if($content->type->id == 1)
+        //     return $content->path;
+        //     elseif($content->type->id == 2)
+        //     return $content->path;
+        //     elseif($content->type->id == 3)
+        //     return '<img src="'.url(isset($content->path)?$content->path: '').'" alt="" style="width:250px" height="200px">';
+        //     elseif($content->type->id == 4)
+        //     return '<audio controls src="'.url(isset($content->path)?$content->path: '').'" style="width:100%"></audio>';
+        //     elseif($content->type->id == 5)
+        //     return '<video src="'.url(isset($content->path)?$content->path: '').'" style="width:250px;height:200px" height="200px" controls poster="'.url(isset($content->image_preview)?$content->image_preview: '').'"></video>';
+        //     elseif($content->type->id == 6)
+        //     return '<iframe src="'.$content->path.'" width="250px" height="200px"></iframe>';
+        //     elseif($content->type->id == 7)
+        //     return '<a href="'.$content->path.'">'.$content->path.'</a>' ;
+        // })
         ->addColumn('content_type', function(Content $content) {
             return $content->type->title;
         })
-        ->addColumn('Category', function(Content $content) {
+        ->addColumn('subcategory', function(Content $content) {
             if(isset($content->category))
-              return $content->category->title .'-'.$content->category->cat->title;
+            return $content->category->title ;
         })
-        ->addColumn('patch number', function(Content $content) {
-              return $content->patch_number;
+        ->addColumn('Category', function(Content $content) {
+            if(isset($content->category->cat->title))
+            return $content->category->cat->title;
         })
         ->addColumn('action', function(Content $content) {
-          // return '<a class="btn btn-sm show-tooltip" href="'.url("content/$content->id/edit").'" title="Edit"><i class="fa fa-edit"></i></a>
-          // <a class="btn btn-sm show-tooltip btn-danger" onclick="return ConfirmDelete();" href="'.url("content/$content->id/delete").'" title="Delete"><i class="fa fa-trash"></i></a>';
-          $value = $content;
-          return view('content.c_inner', compact('value'))->render();
+        $value = $content;
+        return view('content.c_inner', compact('value'))->render();
         })
         ->escapeColumns([])
         ->make(true);

@@ -267,7 +267,7 @@ if (Config::get('languages')[App::getLocale()] == "English") {
                         <!-- END Submenu -->
                     </li>
                     @endif
-                    {{-- 
+                    {{--
                     @if (get_action_icons('types/index', 'get'))
                     <ul class="nav nav-list">
                         <li id="type">
@@ -301,7 +301,7 @@ if (Config::get('languages')[App::getLocale()] == "English") {
                         <!-- END Submenu -->
                     </li>
                     @endif
-                    
+
                     @if (get_action_icons('setting', 'get'))
                     <li id="images">
                         <a href="#" class="dropdown-toggle">
@@ -318,7 +318,7 @@ if (Config::get('languages')[App::getLocale()] == "English") {
                         <!-- END Submenu -->
                     </li>
                     @endif
-                    
+
                     @if (get_action_icons('static_translation', 'get'))
                     <ul class="nav nav-list">
                         <li id="static">
@@ -337,7 +337,7 @@ if (Config::get('languages')[App::getLocale()] == "English") {
                         </li>
                     </ul>
                     @endif
-                    
+
                     @if (get_action_icons('language', 'get'))
                     <ul class="nav nav-list">
                         <li id="language">
@@ -373,7 +373,7 @@ if (Config::get('languages')[App::getLocale()] == "English") {
                         </li>
                     </ul>
                     @endif--}}
-                   
+
 
                     @if (get_action_icons('country', 'get'))
                     <ul class="nav nav-list">
@@ -486,14 +486,14 @@ if (Config::get('languages')[App::getLocale()] == "English") {
                         <li id="contents">
                             <a href="#" class="dropdown-toggle">
                                 <i class="glyphicon glyphicon-cloud"></i>
-                                <span>Content</span>
+                                <span>Meals</span>
                                 <b class="arrow fa fa-angle-right"></b>
                             </a>
 
                             <!-- BEGIN Submenu -->
                             <ul class="submenu">
-                                <li id="contents_index"><a href="{{url('content')}}">List Content </a></li>
-                                <li id="contents_create"><a href="{{url('content/create')}}">Create Content</a></li>
+                                <li id="contents_index"><a href="{{url('content')}}">List Meals </a></li>
+                                <li id="contents_create"><a href="{{url('content/create')}}">Create Meals</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -532,7 +532,7 @@ if (Config::get('languages')[App::getLocale()] == "English") {
                                 <!-- END Submenu -->
                             </li>
                         </ul>--}}
-                        
+
                     @endif
                 </ul>
                 <!-- END Navlist -->
