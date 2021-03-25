@@ -7,6 +7,7 @@
         <div class="col-12">
             <h4 class="ramdan_menu text-center text-capitalize rounded">منيو رمضان</h5>
         </div>
+        
         @foreach ($categorys as $category)
         <div class="col-6">
             <a href="category.php">
