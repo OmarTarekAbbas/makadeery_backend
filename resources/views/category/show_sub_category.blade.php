@@ -54,7 +54,7 @@
                                       </td>
                                       <td class="visible-md visible-lg">
                                           <div class="btn-group">
-                                              <a class="btn btn-sm btn-success show-tooltip" title="Add Meals" href="{{url("content/create?category_id=".$value->id."&title=".$value->title)}}" data-original-title="Add Meals"><i class="fa fa-plus"></i></a>
+                                              <a class="btn btn-sm btn-success show-tooltip" title="Add Meals" href="{{url("content/create?category_id=".$value->id."&title=".$value->title.'-'.$value->cat->title)}}" data-original-title="Add Meals"><i class="fa fa-plus"></i></a>
                                               @if(count($value->contents) > 0)
                                               <a class="btn btn-sm show-tooltip" title="Show Meals" href="{{url("category/$value->id")}}" data-original-title="show Meals"><i class="fa fa-step-forward"></i></a>
                                               @endif
