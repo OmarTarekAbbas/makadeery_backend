@@ -1,5 +1,4 @@
 <!-- Start Header -->
-<?php include 'header.php'; ?>
 <!-- End Header -->
 
 <div class="container">
@@ -13,12 +12,11 @@
 
         <h5 class="mb-3 font-weight-bold text-capitalize"> 404 Page Not Found</h5>
 
-        <a href="index.php" class="btn btn-block rounded-pill text-capitalize">go to home page</a>
+        <a href="{{route('home')}}" class="btn btn-block rounded-pill text-capitalize">go to home page</a>
       </div>
     </section>
   </div>
 </div>
 
 <!-- Start Footer -->
-<?php include 'footer.php'; ?>
 <!-- End Footer -->

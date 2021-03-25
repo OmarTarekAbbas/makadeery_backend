@@ -53,8 +53,6 @@ a {
 }
 
 .header_Nav {
-  background-color: $whiteCol;
-
   .navbar_btn {
     background: linear-gradient($darkRedCol, $redCol);
     height: 100%;
@@ -385,6 +383,88 @@ a {
     }
   }
 
+  .sub_category {
+    .ramdan_menu {
+      color: $redCol;
+      width: 60%;
+      margin: auto;
+      padding: 2% 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .ramdan_category {
+      margin: auto;
+      margin-bottom: 7%;
+      padding: 6%;
+      background-color: $redCol;
+      width: 100%;
+      height: 150px;
+      display: grid;
+      align-content: center;
+      border-radius: 1rem;
+      -webkit-border-radius: 1rem;
+      -moz-border-radius: 1rem;
+      -ms-border-radius: 1rem;
+      -o-border-radius: 1rem;
+
+      &.ramdan_category_last {
+        width: 50%;
+        height: 170px;
+      }
+
+      .ramdan_category_desc {
+        width: 100%;
+        color: $whiteCol;
+        text-align: center;
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .inner_category {
+    margin-top: 37%;
+
+    .video {
+      width: 100%;
+      height: 240px;
+    }
+
+    .grid_view {
+      margin-top: 3%;
+      padding-right: 15px;
+      padding-left: 15px;
+      width: 70%;
+      display: grid;
+      grid-template-columns: 20% 20% 20% 20% 20%;
+
+      .inner_share {
+        margin: auto;
+        color: $blackCol;
+
+        &:hover,
+        &:focus {
+          color: $redCol;
+        }
+      }
+    }
+
+    .episode {
+      margin-top: 7%;
+
+      .episode_title {
+        color: $redCol;
+        margin-bottom: 0;
+      }
+
+      .episode_num {
+        font-size: 0.8rem;
+        padding-right: 2%;
+
+        .episode_hegri {}
+      }
+    }
+  }
+
   #error {
     align-items: center;
 
@@ -412,6 +492,7 @@ a {
   width: 100%;
   height: 100%;
   background: linear-gradient($redCol, $darkRedCol);
+  z-index: 999999;
 
   .spinner {
     img {
@@ -508,21 +589,6 @@ a {
 
       .ramdan_category {
         .ramdan_category_title {
-          font-size: 1.5rem;
-          left: 73%;
-          top: 36%;
-        }
-      }
-    }
-
-    .male,
-    .female {
-      margin-top: 4%;
-
-      .male_track {
-        margin-bottom: 2%;
-
-        .male_name {
           font-size: 1.5rem;
           left: 73%;
           top: 36%;
@@ -626,32 +692,22 @@ a {
         }
       }
     }
-
-    .male,
-    .female {
-      margin-top: 4%;
-
-      .male_track {
-        margin-bottom: 2%;
-
-        .male_name {
-          font-size: 1.75rem;
-          left: 78%;
-          top: 38%;
-        }
-      }
-    }
   }
 }
 
 @media (min-width: 1030px) {
   body {
-    width: 30%;
+    width: 25%;
     margin: 0 auto;
   }
 
   .hamburger-wrapper {
-    left: 62.5%;
+    right: 59%;
+    width: 4%;
+
+    .burger_svg {
+      width: 43%;
+    }
   }
 
   #menu-toggle:checked~.navbar_btn {
@@ -659,7 +715,7 @@ a {
   }
 
   .loading-overlay {
-    width: 30%;
+    width: 25%;
   }
 
   .search_form {
@@ -669,73 +725,16 @@ a {
       }
     }
   }
-}
 
-.swirl-in-fwd {
-  -webkit-animation: swirl-in-fwd 1.5s ease-in-out both;
-  animation: swirl-in-fwd 1.5s ease-in-out both;
-}
+  .main {
+    .sub_category {
+      .ramdan_category {
+        height: 200px;
 
-@-webkit-keyframes swirl-in-fwd {
-  0% {
-    -webkit-transform: rotate(-540deg) scale(0);
-    transform: rotate(-540deg) scale(0);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: rotate(0) scale(1);
-    transform: rotate(0) scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes swirl-in-fwd {
-  0% {
-    -webkit-transform: rotate(-540deg) scale(5);
-    transform: rotate(-540deg) scale(5);
-    opacity: 0;
-    -moz-transform: rotate(-540deg) scale(5);
-    -ms-transform: rotate(-540deg) scale(5);
-    -o-transform: rotate(-540deg) scale(5);
-  }
-
-  100% {
-    -webkit-transform: rotate(0) scale(1);
-    transform: rotate(0) scale(1);
-    opacity: 1;
-  }
-}
-
-.swirl-in-bck {
-  -webkit-animation: swirl-in-bck 1.5s ease-in-out both;
-  animation: swirl-in-bck 1.5s ease-in-out both;
-}
-
-@-webkit-keyframes swirl-in-bck {
-  0% {
-    -webkit-transform: rotate(540deg) scale(5);
-    transform: rotate(540deg) scale(5);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: rotate(0) scale(1);
-    transform: rotate(0) scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes swirl-in-bck {
-  0% {
-    -webkit-transform: rotate(540deg) scale(5);
-    transform: rotate(540deg) scale(5);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: rotate(0) scale(1);
-    transform: rotate(0) scale(1);
-    opacity: 1;
+        &.ramdan_category_last {
+          height: 210px;
+        }
+      }
+    }
   }
 }

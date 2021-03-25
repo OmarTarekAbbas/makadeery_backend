@@ -21,8 +21,8 @@ class GlobalSearchFilter implements Filter
         ->where('translatables.table_name','contents')
         ->where('translatables.column_name','title')
         ->where(function($q) use ($value){
-          $q->where('contents.title', 'like', '%' . $value. '%');
-          $q->orWhere('tans_bodies.body', 'like', '%' . $value . '%');
+            $q->where('contents.title', 'like', '%' . $value. '%');
+            $q->orWhere('tans_bodies.body', 'like', '%' . $value . '%');
         });
     }
 }
