@@ -567,8 +567,11 @@ a {
   }
 
   .hamburger-wrapper {
-    left: 92%;
+    width: 6%;
+    right: 94%;
+    top: 17px;
   }
+
 
   #menu-toggle:checked~.navbar_btn {
     left: 67.4%;
@@ -620,6 +623,12 @@ a {
           left: 73%;
           top: 36%;
         }
+      }
+    }
+
+    .sub_category {
+      .ramdan_category {
+        height: 200px;
       }
     }
   }
