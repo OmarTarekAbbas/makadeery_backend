@@ -8,7 +8,7 @@
       <h3 class="ramdan_menu text-center text-capitalize rounded">اختر مقاديرك</h5>
     </div>
     @foreach ($category->sub_cats as $sub_cats)
-    <div class="col-12">
+    <div class="col-md-4 col-lg-4 col-xl-6 col-6">
       <a href="{{route('contents', ['category_id'=> $sub_cats->id])}}" class="link_href">
         <div class="ramdan_category_last">
           <img class="ramdan_category_img" src="{{$sub_cats->image}}" alt="{{$sub_cats->title}}">

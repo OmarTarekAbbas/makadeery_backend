@@ -9,7 +9,7 @@
     </div>
 
     @forelse ($contents as $content)
-    <div class="col-md-4 col-6">
+    <div class="col-md-4 col-lg-4 col-xl-6 col-6">
       <a href="{{route('meal',$content->id)}}" class="link_href">
         <div class="ramdan_category">
           <p class="ramdan_category_desc mb-0">{{$content->title}}</p>
