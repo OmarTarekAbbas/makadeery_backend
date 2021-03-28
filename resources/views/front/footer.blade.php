@@ -10,6 +10,7 @@
 <script src="{{asset('front')}}/js/popper.min.js"></script>
 <script src="{{asset('front')}}/js/bootstrap.min.js"></script>
 <script src="{{asset('front')}}/js/scribt.js"></script>
+
 <script>
    op_id = {{ isset($_REQUEST['OpID']) ? 1 : 0 }}
       if (op_id) {
