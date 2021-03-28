@@ -61,15 +61,23 @@
             <section class="search_form">
               <h5 class="find_your_food text-capitalize text-center font-weight-bold">Search</h5>
 
-              <form action="{{route('contents')}}" class="search-container link_href">
-                <input type="text" name="search" value="{{ request()->get('search') }}" class="form-control search-bar" placeholder="بحث ...">
-                <button class="btn search-icon"><i class="far fa-search"></i></button>
-              </form>
-            </section>
-          </div>
+                            <form action="{{route('contents')}}" class="search-container">
+                                @if(request()->has('OpID'))
+                                <input type="hidden" name="OpID" value="{{request()->get('OpID')}}">
+                                @endif
+                                <input type="text" name="search" value="{{ request()->get('search') }}"
+                                    class="form-control search-bar" placeholder="بحث ...">
+                                <button class="btn search-icon"><i class="far fa-search"></i></button>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
     </div>
   </div>
 
-  <main class="main close_nav">
+    <main class="main close_nav">
+
+
