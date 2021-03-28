@@ -84,3 +84,4 @@ if (! function_exists('setting')) {
         return $data ? $data->value : '';
     }
 }
+

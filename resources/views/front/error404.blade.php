@@ -12,7 +12,7 @@
 
         <h5 class="mb-3 font-weight-bold text-capitalize"> 404 Page Not Found</h5>
 
-        <a href="{{route('home')}}" class="btn btn-block rounded-pill text-capitalize">go to home page</a>
+        <a href="{{route('home')}}" class="btn btn-block rounded-pill text-capitalize link_href">go to home page</a>
       </div>
     </section>
   </div>

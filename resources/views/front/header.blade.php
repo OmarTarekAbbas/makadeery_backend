@@ -16,36 +16,31 @@
     <header class="header_Nav">
         <input type="checkbox" id="menu-toggle">
         <label class="hamburger-wrapper" for="menu-toggle">
-            <svg class="burger_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 50 30" xml:space="preserve">
-                <rect x="13.2" y="1.2" class="st0" width="32.9" height="5.2" />
-                <rect x="3.8" y="12.9" class="st0" width="32.7" height="5" />
-                <rect x="13.2" y="23.6" class="st0" width="32.9" height="5.2" />
-            </svg>
+            @include("front.svg.menu")
         </label>
 
         <nav id="test" class="navbar_btn">
             <ul id="accordion" class="accordion list-unstyled">
                 <li id="indexed" class="">
-                    <a href="{{url('')}}" class="link text-capitalize">الرئيسية
+                    <a  href="{{url('')}}" class="link text-capitalize link_href">الرئيسية
                     @include("front.svg.home")
                     </a>
                 </li>
 
                 <li>
-                    <a href="category.php" class="link text-capitalize">لحوم
+                    <a href="{{route('contents', ['search'=> 'لحوم'])}}" class="link text-capitalize link_href">لحوم
                     @include("front.svg.meat")
                     </a>
                 </li>
 
                 <li>
-                    <a href="category.php" class="link text-capitalize">اسماك
+                    <a href="{{route('contents', ['search'=> 'اسماك'])}}" class="link text-capitalize link_href">اسماك
                         @include("front.svg.fish")
                     </a>
                 </li>
 
                 <li>
-                    <a href="category.php" class="link text-capitalize">فراخ
+                    <a href="{{route('contents', ['search'=> 'فراخ'])}}" class="link text-capitalize link_href">فراخ
                     @include("front.svg.chicken")
                     </a>
                 </li>
@@ -68,7 +63,7 @@
                         <section class="search_form">
                             <h5 class="find_your_food text-capitalize text-center font-weight-bold">Search</h5>
 
-                            <form action="{{route('contents')}}" class="search-container">
+                            <form action="{{route('contents')}}" class="search-container link_href">
                                 <input type="text" name="search" value="{{ request()->get('search') }}" class="form-control search-bar" placeholder="بحث ...">
                                 <button class="btn search-icon"><i class="far fa-search"></i></button>
                             </form>

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Category;
+use App\Content;
 use App\Http\Filters\ContentFilters\CategoryFilter;
 use App\Http\Filters\ContentFilters\GlobalSearchFilter;
 use App\Http\Filters\ContentFilters\OperatorFilter;
-use App\Content;
-use App\Category;
+use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
@@ -21,8 +21,7 @@ class FrontController extends Controller
     public function home(Request $request)
     {
         $categorys = Category::whereNull('parent_id')->get();
-        $populars = Content::search($this->filters())->latest()->get();
-        return view("front.index", compact("populars","categorys"));
+        return view("front.index", compact("categorys"));
     }
 
     public function subcategory(Category $category)
@@ -41,9 +40,9 @@ class FrontController extends Controller
      */
     public function listContents(Request $request)
     {
-        $contents = Content::select('contents.*','contents.id as content_id')->with(['category'])->search($this->filters())->paginate(get_limit_paginate());
+        $contents = Content::select('contents.*', 'contents.id as content_id')->with(['category'])->search($this->filters())->paginate(get_limit_paginate());
         // dd($contents);
-        if($request->ajax()) {
+        if ($request->ajax()) {
             $html = view("front.load_contents", compact("contents"))->render();
             return Response(array('html' => $html));
         }
@@ -52,8 +51,8 @@ class FrontController extends Controller
 
     public function meal(Content $content)
     {
-        // dd($content);
-        return view("front.innercontent", compact("content"));
+        $hjrri_date = $this->hjrri_date_cal();
+        return view("front.innercontent", compact("content","hjrri_date"));
     }
 
     /**
@@ -66,9 +65,33 @@ class FrontController extends Controller
     public function filters()
     {
         return [
-            'search'      => new GlobalSearchFilter,
-            'op'          => new OperatorFilter,
-            'category_id' => new CategoryFilter
+            'search' => new GlobalSearchFilter,
+            'OpID' => new OperatorFilter,
+            'category_id' => new CategoryFilter,
         ];
     }
+
+    public function hjrri_date_cal()
+    {
+        // Hijri date
+        $hjrri_date = array();
+        include public_path('plugins/HijriDate.php');
+        $hijri = new \HijriDate();
+
+        $current_date = date("Y-m-d");
+
+        $hijri = new \HijriDate(strtotime($current_date));
+
+        $day = $hijri->get_day();
+        $month = $hijri->get_month_name_ar($hijri->get_month());
+        $year = $hijri->get_year();
+
+        $hjrri_date_object = new \stdClass();
+        $hjrri_date_object->day = $day;
+        $hjrri_date_object->month = $month;
+        $hjrri_date_object->year = $year;
+
+        return $hjrri_date_object;
+    }
+
 }
