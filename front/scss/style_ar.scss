@@ -1,10 +1,8 @@
 /*********** Color ***********/
-$mainCol: #3e0e58;
-$seckCol: #d51b88;
-$whiteCol: #fff;
-$blackCol: #000;
 $redCol: #f60811;
 $darkRedCol: #ac1e23;
+$whiteCol: #fff;
+$blackCol: #000;
 
 /*********** Text Align ***********/
 $textLeft: left;
@@ -25,7 +23,7 @@ body {
   text-align: $textRight;
   width: 100%;
   height: 100%;
-  background-image: url(../images/Cutting/BG.png);
+  background-image: url('../images/Cutting/BG.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -48,7 +46,7 @@ a {
 }
 
 .active_menu_tabs {
-  border-bottom: 3px solid #d51b88;
+  border-bottom: 3px solid $redCol;
   padding: 0;
 }
 
@@ -151,7 +149,7 @@ a {
           }
 
           .dropdown-divider {
-            border-top: 1px solid $seckCol;
+            border-top: 1px solid $redCol;
           }
         }
       }
@@ -427,6 +425,7 @@ a {
     .video {
       width: 100%;
       height: 240px;
+      object-fit: cover;
     }
 
     .grid_view {
@@ -466,20 +465,24 @@ a {
   }
 
   #error {
-    align-items: center;
+    margin-top: 20%;
 
     .card {
       i {
-        color: $seckCol;
+        color: $redCol;
+      }
+
+      p {
+        font-size: 2.5rem;
       }
 
       a {
-        background-color: $mainCol;
+        background-color: $redCol;
         color: $whiteCol;
 
         &:hover,
         &:focus {
-          box-shadow: 0 0 0 0.2rem $seckCol;
+          box-shadow: 0 0 0 0.2rem $redCol;
         }
       }
     }
@@ -500,6 +503,30 @@ a {
       margin-right: 20%;
       margin-top: 60%;
     }
+  }
+}
+
+@media (min-width: 1px) and (max-width: 359.9px) {
+  #menu-toggle:checked~.navbar_btn {
+    left: 45.2%;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 410.9px) {
+  #menu-toggle:checked~.navbar_btn {
+    left: 53.2%;
+  }
+}
+
+@media (min-width: 411px) and (max-width: 415px) {
+  #menu-toggle:checked~.navbar_btn {
+    left: 57.7%;
+  }
+}
+
+@media (min-width: 416px) and (max-width: 450px) {
+  #menu-toggle:checked~.navbar_btn {
+    left: 59.1%;
   }
 }
 
@@ -593,6 +620,14 @@ a {
           left: 73%;
           top: 36%;
         }
+      }
+    }
+  }
+
+  .loading-overlay {
+    .spinner {
+      img {
+        margin-top: 30%;
       }
     }
   }
@@ -690,6 +725,14 @@ a {
           left: 78%;
           top: 38%;
         }
+      }
+    }
+  }
+
+  .loading-overlay {
+    .spinner {
+      img {
+        margin-top: 35%;
       }
     }
   }
