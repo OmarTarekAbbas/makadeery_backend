@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makadeery</title>
+    <link rel="shortcut icon" sizes="16x16" href="{{asset('front/images/Cutting/Splash/logo_strap.png')}}">
     <link rel="stylesheet" href="{{asset('front/css/all.min.css')}}">
-
     <link rel="stylesheet" href="{{asset('front/css/bootstrap.min.css')}}">
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="{{asset('front/css/style_ar.css')}}">
 </head>
 
@@ -22,14 +21,14 @@
         <nav id="test" class="navbar_btn">
             <ul id="accordion" class="accordion list-unstyled">
                 <li id="indexed" class="">
-                    <a  href="{{url('')}}" class="link text-capitalize link_href">الرئيسية
-                    @include("front.svg.home")
+                    <a href="{{url('')}}" class="link text-capitalize link_href">الرئيسية
+                        @include("front.svg.home")
                     </a>
                 </li>
 
                 <li>
                     <a href="{{route('contents', ['search'=> 'لحوم'])}}" class="link text-capitalize link_href">لحوم
-                    @include("front.svg.meat")
+                        @include("front.svg.meat")
                     </a>
                 </li>
 
@@ -41,7 +40,7 @@
 
                 <li>
                     <a href="{{route('contents', ['search'=> 'فراخ'])}}" class="link text-capitalize link_href">فراخ
-                    @include("front.svg.chicken")
+                        @include("front.svg.chicken")
                     </a>
                 </li>
             </ul>
@@ -64,7 +63,8 @@
                             <h5 class="find_your_food text-capitalize text-center font-weight-bold">Search</h5>
 
                             <form action="{{route('contents')}}" class="search-container link_href">
-                                <input type="text" name="search" value="{{ request()->get('search') }}" class="form-control search-bar" placeholder="بحث ...">
+                                <input type="text" name="search" value="{{ request()->get('search') }}"
+                                    class="form-control search-bar" placeholder="بحث ...">
                                 <button class="btn search-icon"><i class="far fa-search"></i></button>
                             </form>
                         </section>

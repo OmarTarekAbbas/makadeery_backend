@@ -16,9 +16,9 @@
                 </div>
             </a>
         </div>
-        @empty
-        @include("front.error404")
-        @endforelse
+    @empty
+    @include("front.error404")
+    @endforelse
 
     </div>
 </section>
