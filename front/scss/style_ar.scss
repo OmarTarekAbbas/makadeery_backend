@@ -467,7 +467,7 @@ a {
   }
 
   #error {
-    margin-top: 20%;
+    margin-top: 20% !important;
 
     .card {
       i {
@@ -574,7 +574,6 @@ a {
     top: 17px;
   }
 
-
   #menu-toggle:checked~.navbar_btn {
     left: 67.4%;
   }
@@ -613,8 +612,6 @@ a {
 
   .main {
     .all_ramdan {
-      margin-top: 8%;
-
       .ramdan_menu {
         font-size: 1.75rem;
       }
@@ -675,7 +672,8 @@ a {
 @media (min-width: 1024px) and (max-width: 1029.9px) {
   .header_Nav {
     .search_btn {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
+      padding: 18px;
     }
 
     .navbar_btn {
@@ -710,7 +708,9 @@ a {
   }
 
   .hamburger-wrapper {
-    left: 92%;
+    width: 8%;
+    right: 91%;
+    top: 17px;
   }
 
   #menu-toggle:checked~.navbar_btn {
@@ -752,8 +752,6 @@ a {
 
   .main {
     .all_ramdan {
-      margin-top: 8%;
-
       .ramdan_menu {
         font-size: 2rem;
       }
@@ -765,6 +763,57 @@ a {
           top: 38%;
         }
       }
+    }
+
+    .list_category {
+      margin-top: 15%;
+
+      .ramdan_menu {
+        font-size: 2.25rem;
+      }
+
+      .ramdan_category_last {
+        width: 100%;
+      }
+    }
+
+    .sub_category {
+      .ramdan_menu {
+        font-size: 2.25rem;
+      }
+
+      .ramdan_category {
+        height: 280px;
+
+        .ramdan_category_desc {
+          font-size: 1.75rem;
+        }
+      }
+    }
+
+    .inner_category {
+      margin-top: 14%;
+
+      .video {
+        width: 75%;
+        height: 275px;
+      }
+
+      .grid_view {
+        margin: auto;
+        width: 55%;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+      }
+
+      .episode {
+        padding-right: 13%;
+      }
+    }
+
+    #error {
+      width: 75%;
+    margin: auto;
     }
   }
 
