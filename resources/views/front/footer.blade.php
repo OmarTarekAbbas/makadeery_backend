@@ -13,12 +13,12 @@
 
 <script>
    op_id = {{ isset($_REQUEST['OpID']) ? 1 : 0 }}
-      if (op_id) {
-        var operator_id = {{ isset($_REQUEST['OpID']) ? $_REQUEST['OpID'] : '' }}
-        $('.link_href').each(function() {
-          var $this = $(this);
-          var _href = $this.attr("href");
-          console.log(_href);
+   if (op_id) {
+     var operator_id = {{ isset($_REQUEST['OpID']) ? $_REQUEST['OpID'] : '' }}
+     $('.link_href').each(function() {
+       console.log($(this));
+       var $this = $(this);
+       var _href = $this.attr("href");
           if (_href.includes('?')) {
             $this.attr("href", _href + '&OpID=' + operator_id);
           } else {

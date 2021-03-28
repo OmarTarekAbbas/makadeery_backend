@@ -61,7 +61,7 @@
             <section class="search_form">
               <h5 class="find_your_food text-capitalize text-center font-weight-bold">Search</h5>
 
-                            <form action="{{route('contents')}}" class="search-container link_href">
+                            <form action="{{route('contents')}}" class="search-container">
                                 @if(request()->has('OpID'))
                                 <input type="hidden" name="OpID" value="{{request()->get('OpID')}}">
                                 @endif
