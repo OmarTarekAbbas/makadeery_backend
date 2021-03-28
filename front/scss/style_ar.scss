@@ -426,10 +426,12 @@ a {
       width: 100%;
       height: 240px;
       object-fit: cover;
+      margin: auto;
+      display: block;
     }
 
     .grid_view {
-      margin-top: 3%;
+      margin-top: 3% !important;
       padding-right: 15px;
       padding-left: 15px;
       width: 70%;
@@ -626,9 +628,37 @@ a {
       }
     }
 
+    .list_category {
+      margin-top: 15%;
+
+      .ramdan_category_last {
+        width: 100%;
+      }
+    }
+
     .sub_category {
       .ramdan_category {
-        height: 200px;
+        height: 230px;
+      }
+    }
+
+    .inner_category {
+      margin-top: 14%;
+
+      .video {
+        width: 75%;
+        height: 275px;
+      }
+
+      .grid_view {
+        margin: auto;
+        width: 55%;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+      }
+
+      .episode {
+        padding-right: 13%;
       }
     }
   }
