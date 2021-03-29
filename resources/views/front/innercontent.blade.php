@@ -4,7 +4,7 @@
 
 <style>
   body {
-    background-image: url('{{url("/front/images/Cutting/ramadan_bg.jpg")}}');
+    background-image: url('{{url("/front/images/Cutting/ramadan_bg_res.jpg")}}');
   }
 
   @media (min-width: 1030px) {
