@@ -10,7 +10,7 @@
 
     @foreach ($categorys as $category)
     <div class="{{$loop->last  % 2==1 ? 'col-12' : 'col-6'}}">
-      <a href="{{url('subcategory/'.$category->id)}}" class="link_href">
+      <a href="{{route('subcategory', [$category->id])}}" class="link_href">
         <div class="ramdan_category {{$loop->last % 2==1 ? 'ramdan_category_last' : ''}}">
           <img class="ramdan_category_img" src="{{$category->image}}" alt="{{$category->title}}">
 

@@ -15,7 +15,7 @@ get_static_routes() ;
 get_dynamic_routes();
 
 Route::get("/", "FrontController@home")->name('home');
-Route::get("subcategory/{category}", "FrontController@subcategory")->name('subcategory');
+Route::get("subcategory/{category}/{category_title?}", "FrontController@subcategory")->name('subcategory');
 Route::get("contents", "FrontController@listContents")->name('contents');
 Route::get("meal/{content}", "FrontController@meal")->name('meal');
 
