@@ -15,9 +15,9 @@
 
           <span><i class="far fa-5x fa-frown"></i></span>
 
-          <p class="mt-2 text-capitalize">نعتذر</p>
+          <p class="mt-2 text-capitalize"></p>
 
-          <h5 class="mb-3 font-weight-bold text-capitalize">الصفحة غير موجودة 404</h5>
+          <h5 class="mb-3 font-weight-bold text-capitalize">لا يوجود وجبات</h5>
 
           <a href="{{route('home')}}" class="btn btn-block rounded-pill text-capitalize link_href">اذهب إلى
             الصفحة الرئيسية</a>
