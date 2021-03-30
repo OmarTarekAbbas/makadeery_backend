@@ -9,7 +9,18 @@
 
   @media (min-width: 1030px) {
     body {
-      background-size: contain;
+      background-size: 25% 100%;
+    }
+  }
+
+  .header_Nav {
+    background: #FFF;
+    height: 45px;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1029.9px) {
+    .header_Nav {
+      height: 60px;
     }
   }
 </style>

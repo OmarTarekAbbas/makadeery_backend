@@ -6,7 +6,11 @@
   </div>
 </div>
 
-<script src="{{asset('front')}}/js/all_script_minify.js"></script>
+<script src="{{asset('front')}}/js/jquery-3.3.1.min.js"></script>
+<script src="{{asset('front')}}/js/popper.min.js"></script>
+<script src="{{asset('front')}}/js/bootstrap.min.js"></script>
+<script src="{{asset('front')}}/js/script_minify.js"></script>
+
 
 <script>
    op_id = {{ isset($_REQUEST['OpID']) ? 1 : 0 }}
