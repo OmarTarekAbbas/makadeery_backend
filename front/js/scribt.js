@@ -12,20 +12,6 @@ $(function () {
 });
 /* End Active Menu Navbar */
 
-/* Start Active Menu Tabs */
-$(function () {
-  var url = window.location.href;
-
-  $(".navbar_tabs a").each(function () {});
-  $(".navbar_tabs a").each(function () {
-    if (url == (this.href)) {
-      $("#indexedt").removeClass("active_menu_tabs");
-      $(this).closest(".nav-item").addClass("active_menu_tabs");
-    }
-  });
-});
-/* End Active Menu Tabs */
-
 $(document).ready(function () {
   $(".close_nav").click(function () {
     $('#menu-toggle').prop('checked', false);

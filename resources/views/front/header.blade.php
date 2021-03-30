@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Makadeery</title>
   <link rel="shortcut icon" sizes="16x16" href="{{asset('front/images/Cutting/Splash/logo_strap.png')}}">
-  <link rel="stylesheet" href="{{asset('front/css/all.min.css')}}">
-  <link rel="stylesheet" href="{{asset('front/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('front/css/style_ar.css')}}">
+  <link rel="stylesheet" href="{{asset('front/css/all_css_minify.css')}}">
 </head>
 
 <body>
