@@ -15,13 +15,9 @@ const mix = require('laravel-mix');
   .sass('resources/sass/app.scss', 'public/css'); */
 
 mix.styles([
-  'front/css/all.min.css',
-  'front/css/bootstrap.min.css',
   'front/css/style_ar.css'
-], 'front/css/all_css_minify.css');
+], 'front/css/style_ar_minify.css');
 
 mix.scripts([
-  'front/js/jquery-3.3.1.min.js',
-  'front/js/popper.min.js',
   'front/js/scribt.js'
-], 'front/js/all_script_minify.js');
+], 'front/js/script_minify.js');

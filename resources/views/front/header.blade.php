@@ -4,9 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO Engine -->
+	<meta name="keywords" content="مجتمع مقاديري لوصفات شهية وأكلات سريعة لسفرة متميزة">
+	<meta name="description" content="مجتمع مقاديري لوصفات شهية وأكلات سريعة لسفرة متميزة">
+	<meta name="title" content="مجتمع مقاديري لوصفات شهية وأكلات سريعة لسفرة متميزة">
   <title>Makadeery</title>
   <link rel="shortcut icon" sizes="16x16" href="{{asset('front/images/Cutting/Splash/logo_strap.png')}}">
-  <link rel="stylesheet" href="{{asset('front/css/all_css_minify.css')}}">
+  <link rel="stylesheet" href="{{asset('front/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{asset('front/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('front/css/style_ar_minify.css')}}">
 </head>
 
 <body>

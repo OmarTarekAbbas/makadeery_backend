@@ -9,7 +9,18 @@
 
   @media (min-width: 1030px) {
     body {
-      background-size: contain;
+      background-size: 25% 100%;
+    }
+  }
+
+  .header_Nav {
+    background: #FFF;
+    height: 45px;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1029.9px) {
+    .header_Nav {
+      height: 60px;
     }
   }
 </style>
@@ -23,26 +34,26 @@
     </div>
 
     <div class="grid_view">
-            <a href="javascript:void(0);" class="inner_share">
-                <i class="fas fa-ellipsis-h"></i>
-            </a>
+      <a href="javascript:void(0);" class="inner_share">
+        <i class="fas fa-ellipsis-h"></i>
+      </a>
 
-            <a href="javascript:void(0);" class="inner_share">
-                <i class="fas fa-bars"></i>
-            </a>
+      <a href="javascript:void(0);" class="inner_share">
+        <i class="fas fa-bars"></i>
+      </a>
 
-            <a href="javascript:void(0);" class="inner_share">
-                <i class="fas fa-share"></i>
-            </a>
+      <a href="javascript:void(0);" class="inner_share">
+        <i class="fas fa-share"></i>
+      </a>
 
-            <a href="javascript:void(0);" class="inner_share">
-                <i class="fas fa-thumbs-down"></i>
-            </a>
+      <a href="javascript:void(0);" class="inner_share">
+        <i class="fas fa-thumbs-down"></i>
+      </a>
 
-            <a href="javascript:void(0);" class="inner_share">
-                <i class="fas fa-thumbs-up"></i>
-            </a>
-        </div>
+      <a href="javascript:void(0);" class="inner_share">
+        <i class="fas fa-thumbs-up"></i>
+      </a>
+    </div>
 
     <div class="col-12">
       <div class="episode">
