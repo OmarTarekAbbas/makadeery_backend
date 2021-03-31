@@ -51,9 +51,9 @@ class Category extends Model
     public function scopeOperators($query)
     {
         return $query->whereHas("contents",function($builder){
-            if(request()->filled("op")){
+            if(request()->filled("OpID")){
                 $builder->whereHas("posts",function($query) {
-                    $query->where('operator_id', request("op"));
+                    $query->where('operator_id', request("OpID"));
                 });
             }
         });

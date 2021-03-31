@@ -116,9 +116,16 @@ class PostController extends Controller
       $content = Content::findOrFail($request->content_id);
 
       foreach ($request->operator_id as  $operator_id) {
-        // $url = route('meal' , ['id' => $content->id ,setSlug($content->title),setSlug($content->category->title),setSlug($content->category->cat->title)]).'?OpID='.$operator_id;
-        $operator = $content->operators()->attach([$operator_id => ['url' => url($request->content_id.'/meal/'.setSlug($content->title).'/'.setSlug($content->category->title).'/'.setSlug($content->category->cat->title).'?OpID='.$operator_id) ,
-        'published_date' => $request->published_date,'active' => $request->active , 'user_id' => Auth::user()->id]]);
+        $url = route('meal' , ['content_id' => $content->id, 'content_title' => setSlug($content->title), 'subcategory_title' => setSlug($content->category->title), 'category_title' => setSlug($content->category->cat->title)]);
+
+        $operator = $content->operators()->attach([
+          $operator_id => [
+            'url' => $url.'?OpID='.$operator_id,
+            'published_date' => $request->published_date,
+            'active' => $request->active ,
+            'user_id' => Auth::user()->id
+          ]
+        ]);
       }
 
       $posts = Post::where('content_id',$request->content_id)->whereIn('operator_id',$request->operator_id)->get();

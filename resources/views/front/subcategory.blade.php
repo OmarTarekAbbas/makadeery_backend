@@ -8,7 +8,7 @@
     </div>
     @foreach ($category->sub_cats as $sub_cats)
     <div class="col-md-4 col-lg-4 col-xl-12 col-12">
-      <a href="{{route('contents', ['category_id'=> $sub_cats->id,setSlug($sub_cats->title) ,setSlug($category->title)])}}" class="link_href">
+      <a href="{{route('contents', ['category_id' => $sub_cats->id, 'category_title' => setSlug($sub_cats->title), 'subcategory_title' => setSlug($category->title)])}}" class="link_href">
         <div class="ramdan_category_last">
           <img class="ramdan_category_img" src="{{$sub_cats->image}}" alt="{{$sub_cats->title}}">
         </div>

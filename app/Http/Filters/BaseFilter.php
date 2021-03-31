@@ -37,15 +37,18 @@ class BaseFilter
     public function apply(Builder $builder, array $filters)
     {
         foreach ($this->getFilters($filters) as $key => $filter) {
-            if ($this->request->route()->parameters($key)) {
-              $filter->apply($builder, $this->request->route()->parameters($key));
+
+            if ($this->request->route($key)) {
+              $filter->apply($builder, $this->request->route($key));
             }
 
-            if(!$filter instanceof Filter || $this->request->get($key) == ''){
+            if(!$filter instanceof Filter || !$this->request->filled($key)){
                 continue;
             }
 
             $filter->apply($builder, $this->request->get($key));
+
+
         }
         return $builder;
     }
@@ -58,6 +61,6 @@ class BaseFilter
      */
     public function getFilters(array $filters)
     {
-        return Arr::only($filters,array_keys(array_merge($this->request->all(), $this->request->route()->parameters())));
+        return Arr::only($filters, array_keys(array_merge($this->request->all(), $this->request->route()->parameters())));
     }
 }
