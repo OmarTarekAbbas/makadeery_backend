@@ -1,7 +1,6 @@
 <!-- Start Header -->
 @include("front.header")
 <!-- End Header -->
-
 <section class="all_ramdan">
   <div class="row m-0 w-100">
     <div class="col-12">

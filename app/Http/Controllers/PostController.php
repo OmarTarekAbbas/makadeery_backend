@@ -116,7 +116,8 @@ class PostController extends Controller
       $content = Content::findOrFail($request->content_id);
 
       foreach ($request->operator_id as  $operator_id) {
-        $operator = $content->operators()->attach([$operator_id => ['url' => url('meal/'.$request->content_id.'?OpID='.$operator_id) ,
+        // $url = route('meal' , ['id' => $content->id ,setSlug($content->title),setSlug($content->category->title),setSlug($content->category->cat->title)]).'?OpID='.$operator_id;
+        $operator = $content->operators()->attach([$operator_id => ['url' => url($request->content_id.'/meal/'.setSlug($content->title).'/'.setSlug($content->category->title).'/'.setSlug($content->category->cat->title).'?OpID='.$operator_id) ,
         'published_date' => $request->published_date,'active' => $request->active , 'user_id' => Auth::user()->id]]);
       }
 
@@ -126,7 +127,7 @@ class PostController extends Controller
      //dd($random);
       foreach ($posts as $post) {
         Post::find($post->id)->update([
-          'url' => url('meal/'.$request->content_id.'?OpID='.$post->operator_id)
+          'url' =>  url($request->content_id.'/meal/'.setSlug($content->title).'/'.setSlug($content->category->title).'/'.setSlug($content->category->cat->title).'?OpID='.$operator_id)
         ]);
       }
 
@@ -188,7 +189,7 @@ class PostController extends Controller
       $post = Post::findOrFail($id);
       $random = mt_rand(100000,999999);
       $content = Content::findOrFail($request->content_id);
-      $post->update($input+['operator_id' => $request->operator_id[0] , 'url' => url('meal/'.$request->content_id.'?OpID='.$request->operator_id[0]) , 'user_id' => Auth::id()]);
+      $post->update($input+['operator_id' => $request->operator_id[0] , 'url' => url($request->content_id.'/meal/'.setSlug($content->title).'/'.setSlug($content->category->title).'/'.setSlug($content->category->cat->title).'?OpID='.$request->operator_id[0]) , 'user_id' => Auth::id()]);
 
       \Session::flash('success', 'Post Update Successfully');
       return redirect('content/'.$request->content_id);

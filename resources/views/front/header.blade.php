@@ -31,19 +31,19 @@
         </li>
 
         <li>
-          <a href="{{route('contents', ['search'=> 'لحوم'])}}" class="link text-capitalize link_href">لحوم
+          <a href="{{route('search', ['search'=> 'لحوم'])}}" class="link text-capitalize link_href">لحوم
             @include("front.svg.meat")
           </a>
         </li>
 
         <li>
-          <a href="{{route('contents', ['search'=> 'اسماك'])}}" class="link text-capitalize link_href">اسماك
+          <a href="{{route('search', ['search'=> 'اسماك'])}}" class="link text-capitalize link_href">اسماك
             @include("front.svg.fish")
           </a>
         </li>
 
         <li>
-          <a href="{{route('contents', ['search'=> 'فراخ'])}}" class="link text-capitalize link_href">فراخ
+          <a href="{{route('search', ['search'=> 'فراخ'])}}" class="link text-capitalize link_href">فراخ
             @include("front.svg.chicken")
           </a>
         </li>
@@ -65,7 +65,7 @@
             <section class="search_form">
               <h5 class="find_your_food text-capitalize text-center font-weight-bold">Search</h5>
 
-                            <form action="{{route('contents')}}" class="search-container">
+                            <form action="{{route('search')}}" class="search-container">
                                 @if(request()->has('OpID'))
                                 <input type="hidden" name="OpID" value="{{request()->get('OpID')}}">
                                 @endif

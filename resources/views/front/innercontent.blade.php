@@ -1,7 +1,6 @@
 <!-- Start Header -->
 @include("front.header")
 <!-- End Header -->
-
 <style>
   body {
     background-image: url('{{url("/front/images/Cutting/ramadan_bg_res.jpg")}}');

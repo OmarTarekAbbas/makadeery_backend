@@ -40,8 +40,8 @@ class FrontController extends Controller
      */
     public function listContents(Request $request)
     {
-        $contents = Content::select('contents.*', 'contents.id as content_id')->with(['category'])->search($this->filters())->paginate(get_limit_paginate());
-        // dd($contents);
+      // dd($request->route("category_id"));
+      $contents = Content::select('contents.*', 'contents.id as content_id')->with(['category'])->search($this->filters())->paginate(get_limit_paginate());
         if ($request->ajax()) {
             $html = view("front.load_contents", compact("contents"))->render();
             return Response(array('html' => $html));
@@ -52,7 +52,7 @@ class FrontController extends Controller
     public function meal(Content $content)
     {
         $hjrri_date = $this->hjrri_date_cal();
-        return view("front.innercontent", compact("content","hjrri_date"));
+        return view("front.innercontent", compact("content", "hjrri_date"));
     }
 
     /**
@@ -80,7 +80,6 @@ class FrontController extends Controller
 
         $current_date = date("Y-m-d", strtotime("+1 day"));
 
-
         $hijri = new \HijriDate(strtotime($current_date));
 
         $day = $hijri->get_day();
@@ -96,3 +95,4 @@ class FrontController extends Controller
     }
 
 }
+
