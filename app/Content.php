@@ -83,4 +83,26 @@ class Content extends Model
   {
     return $this->hasMany('App\Post','content_id','id');
   }
+
+
+/**
+     * Method scopeOperators
+     *
+     * @param Builder $query
+     *
+     * @return Builder
+     */
+    public function scopeOperators($builder)
+    {
+      if(request()->filled("OpID")){
+          return $builder->whereHas("posts",function($query) {
+              $query->where('operator_id', request("OpID"));
+              $query->where('active', 1);
+              $query->where('published_date', '<=', \Carbon\Carbon::now()->format('Y-m-d'));
+          });
+      }
+
+      //return $builder->whereHas("posts");
+
+    }
 }
