@@ -116,7 +116,7 @@ class PostController extends Controller
       $content = Content::findOrFail($request->content_id);
 
       foreach ($request->operator_id as  $operator_id) {
-        $url = route('meal' , ['content_id' => $content->id, 'content_title' => setSlug($content->title), 'subcategory_title' => setSlug($content->category->title), 'category_title' => setSlug($content->category->cat->title)]);
+        $url = route('meal' , ['content_id' => $content->id]);
 
         $operator = $content->operators()->attach([
           $operator_id => [
@@ -134,7 +134,7 @@ class PostController extends Controller
      //dd($random);
       foreach ($posts as $post) {
         Post::find($post->id)->update([
-          'url' =>  url($request->content_id.'/meal/'.setSlug($content->title).'/'.setSlug($content->category->title).'/'.setSlug($content->category->cat->title).'?OpID='.$operator_id)
+          'url' =>  url($request->content_id.'/meal'.'?OpID='.$operator_id)
         ]);
       }
 
@@ -196,7 +196,7 @@ class PostController extends Controller
       $post = Post::findOrFail($id);
       $random = mt_rand(100000,999999);
       $content = Content::findOrFail($request->content_id);
-      $post->update($input+['operator_id' => $request->operator_id[0] , 'url' => url($request->content_id.'/meal/'.setSlug($content->title).'/'.setSlug($content->category->title).'/'.setSlug($content->category->cat->title).'?OpID='.$request->operator_id[0]) , 'user_id' => Auth::id()]);
+      $post->update($input+['operator_id' => $request->operator_id[0] , 'url' => url($request->content_id.'/meal'.'?OpID='.$request->operator_id[0]) , 'user_id' => Auth::id()]);
 
       \Session::flash('success', 'Post Update Successfully');
       return redirect('content/'.$request->content_id);
