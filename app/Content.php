@@ -102,7 +102,5 @@ class Content extends Model
           });
       }
 
-      //return $builder->whereHas("posts");
-
     }
 }
