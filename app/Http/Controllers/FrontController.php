@@ -67,7 +67,7 @@ class FrontController extends Controller
      */
     public function meal(Content $content)
     {
-        $content = Content::whereId($content->id)->operators()->first();
+        $content = Content::whereId($content->id)->operatorsopid()->first();
         $hjrri_date = $this->hjrri_date_cal();
         return view("front.innercontent", compact("content", "hjrri_date"));
     }

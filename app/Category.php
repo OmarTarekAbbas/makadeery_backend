@@ -48,7 +48,7 @@ class Category extends Model
      *
      * @return Builder
      */
-    public function scopeOperators($query)
+    public function scopeOperatorsOpid($query)
     {
         return $query->whereHas("contents",function($builder){
             if(request()->filled("OpID")){

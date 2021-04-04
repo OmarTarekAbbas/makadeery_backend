@@ -92,7 +92,7 @@ class Content extends Model
      *
      * @return Builder
      */
-    public function scopeOperators($builder)
+    public function scopeOperatorsOpid($builder)
     {
       if(request()->filled("OpID")){
           return $builder->whereHas("posts",function($query) {
