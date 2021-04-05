@@ -4,7 +4,9 @@
 <section class="all_ramdan">
   <div class="row m-0 w-100">
     <div class="col-12">
-      <h4 class="ramdan_menu text-center text-capitalize rounded">منيو رمضان</h5>
+      <a href="#0">
+        <h4 class="ramdan_menu text-center text-capitalize rounded">منيو رمضان</h5>
+      </a>
     </div>
 
     @foreach ($categorys as $category)
