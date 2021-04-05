@@ -13,7 +13,7 @@
       <div class="col-12">
         <div class="card text-center p-5 shadow-lg">
 
-          <span><i class="far fa-5x fa-frown"></i></span>
+          <span><i class="far fa-5x fa-smile"></i></span>
 
           <p class="mt-2 text-capitalize">نعتذر</p>
 
