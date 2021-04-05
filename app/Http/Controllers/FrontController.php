@@ -7,6 +7,7 @@ use App\Content;
 use App\Http\Filters\ContentFilters\CategoryFilter;
 use App\Http\Filters\ContentFilters\GlobalSearchFilter;
 use App\Http\Filters\ContentFilters\OperatorFilter;
+use App\Post;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -70,6 +71,19 @@ class FrontController extends Controller
         $content = Content::whereId($content->id)->operatorsopid()->first();
         $hjrri_date = $this->hjrri_date_cal();
         return view("front.innercontent", compact("content", "hjrri_date"));
+    }
+
+    public function today_meal(Request $request)
+    {
+
+      $content = Post::select('contents.id as content_id','contents.title as title','contents.path as path','contents.image_preview as image_preview','contents.category_id as category_id')
+      ->join('contents','contents.id','=','posts.content_id')
+      ->where('operator_id', $request->OpID)
+      ->where('published_date', '<=', \Carbon\Carbon::now()->format('Y-m-d'))
+      ->where('active', 1)
+      ->orderBy('published_date', 'Desc')->first();
+      dd($content);
+        return view("front.innercontent", compact("content"));
     }
 
     /**
