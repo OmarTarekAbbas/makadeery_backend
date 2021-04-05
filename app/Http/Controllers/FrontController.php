@@ -22,13 +22,13 @@ class FrontController extends Controller
     public function home(Request $request)
     {
 
-      $content = Post::select('*')
+      $content = Post::select('posts.url as url')
       ->join('contents','contents.id','=','posts.content_id')
       ->where('operator_id', $request->OpID)
       ->where('published_date', '<=', \Carbon\Carbon::now()->format('Y-m-d'))
       ->where('active', 1)
       ->orderBy('published_date', 'Desc')->first();
-      //  dd($content);
+    //   dd($content);
         $categorys = Category::whereNull('parent_id')->get();
         return view("front.index", compact("categorys",'content'));
     }
