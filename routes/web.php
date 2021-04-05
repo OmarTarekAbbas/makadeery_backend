@@ -20,8 +20,6 @@ Route::get("{category_id?}/contents/{category_title?}/{subcategory_title?}", "Fr
 Route::get("contents", "FrontController@listContents")->name('search');
 Route::get("{content}/meal", "FrontController@meal")->middleware('front')->name('meal');
 
-Route::get("today_meal", "FrontController@today_meal")->name('today_meal');
-
 
 
 

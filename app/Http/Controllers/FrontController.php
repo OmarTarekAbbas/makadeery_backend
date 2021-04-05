@@ -21,8 +21,16 @@ class FrontController extends Controller
      */
     public function home(Request $request)
     {
+
+      $content = Post::select('*')
+      ->join('contents','contents.id','=','posts.content_id')
+      ->where('operator_id', $request->OpID)
+      ->where('published_date', '<=', \Carbon\Carbon::now()->format('Y-m-d'))
+      ->where('active', 1)
+      ->orderBy('published_date', 'Desc')->first();
+      //  dd($content);
         $categorys = Category::whereNull('parent_id')->get();
-        return view("front.index", compact("categorys"));
+        return view("front.index", compact("categorys",'content'));
     }
 
     /**
@@ -71,19 +79,6 @@ class FrontController extends Controller
         $content = Content::whereId($content->id)->operatorsopid()->first();
         $hjrri_date = $this->hjrri_date_cal();
         return view("front.innercontent", compact("content", "hjrri_date"));
-    }
-
-    public function today_meal(Request $request)
-    {
-
-      $content = Post::select('contents.id as content_id','contents.title as title','contents.path as path','contents.image_preview as image_preview','contents.category_id as category_id')
-      ->join('contents','contents.id','=','posts.content_id')
-      ->where('operator_id', $request->OpID)
-      ->where('published_date', '<=', \Carbon\Carbon::now()->format('Y-m-d'))
-      ->where('active', 1)
-      ->orderBy('published_date', 'Desc')->first();
-      dd($content);
-        return view("front.innercontent", compact("content"));
     }
 
     /**
