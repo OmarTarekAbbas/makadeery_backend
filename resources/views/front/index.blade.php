@@ -1,7 +1,6 @@
 <!-- Start Header -->
 @include("front.header")
 <!-- End Header -->
-
 <section class="all_ramdan">
   <div class="row m-0 w-100">
     <div class="col-12">
@@ -9,9 +8,9 @@
     </div>
 
     @foreach ($categorys as $category)
-    <div class="{{$loop->last  % 2==1 ? 'col-12' : 'col-6'}}">
-      <a href="{{url('subcategory/'.$category->id)}}" class="link_href">
-        <div class="ramdan_category {{$loop->last % 2==1 ? 'ramdan_category_last' : ''}}">
+    <div class="{{$loop->last && $loop->iteration  % 2==1 ? 'col-12' : 'col-6'}}">
+      <a href="{{route('subcategory', ['category' => $category ,'category_title' => setSlug($category->title)])}}" class="link_href">
+        <div class="ramdan_category {{$loop->last && $loop->iteration % 2==1 ? 'ramdan_category_last' : ''}}">
           <img class="ramdan_category_img" src="{{$category->image}}" alt="{{$category->title}}">
 
           <p class="ramdan_category_title text-center text-capitalize">{{$category->title}}</p>
@@ -25,3 +24,4 @@
 <!-- Start Footer -->
 @include("front.footer")
 <!-- End Footer -->
+

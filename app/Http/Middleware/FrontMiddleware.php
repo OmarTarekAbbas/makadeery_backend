@@ -9,7 +9,7 @@ class FrontMiddleware
 {
     public function handle($request, Closure $next)
     {
-        if (!(request()->filled('op') || setting('enable_testing'))) {
+        if (!(request()->filled('OpID') || setting('enable_testing'))) {
             abort(404);
         }
         return $next($request);

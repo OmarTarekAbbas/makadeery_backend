@@ -24,8 +24,16 @@ class FrontController extends Controller
         return view("front.index", compact("categorys"));
     }
 
+    /**
+     * Method subcategory
+     *
+     * @param Category $category
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
     public function subcategory(Category $category)
     {
+        $category->load("sub_cats");
         return view("front.subcategory", compact("category"));
     }
 
@@ -41,18 +49,27 @@ class FrontController extends Controller
     public function listContents(Request $request)
     {
         $contents = Content::select('contents.*', 'contents.id as content_id')->with(['category'])->search($this->filters())->paginate(get_limit_paginate());
-        // dd($contents);
+
         if ($request->ajax()) {
             $html = view("front.load_contents", compact("contents"))->render();
             return Response(array('html' => $html));
         }
+
         return view("front.contents", compact("contents"));
     }
 
+    /**
+     * Method meal
+     *
+     * @param Content $content
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
     public function meal(Content $content)
     {
+        $content = Content::whereId($content->id)->operatorsopid()->first();
         $hjrri_date = $this->hjrri_date_cal();
-        return view("front.innercontent", compact("content","hjrri_date"));
+        return view("front.innercontent", compact("content", "hjrri_date"));
     }
 
     /**
@@ -71,6 +88,11 @@ class FrontController extends Controller
         ];
     }
 
+    /**
+     * Method hjrri_date_cal
+     *
+     * @return array
+     */
     public function hjrri_date_cal()
     {
         // Hijri date
@@ -78,7 +100,7 @@ class FrontController extends Controller
         include public_path('plugins/HijriDate.php');
         $hijri = new \HijriDate();
 
-        $current_date = date("Y-m-d");
+        $current_date = date("Y-m-d", strtotime("+1 day"));
 
         $hijri = new \HijriDate(strtotime($current_date));
 
@@ -95,3 +117,4 @@ class FrontController extends Controller
     }
 
 }
+
