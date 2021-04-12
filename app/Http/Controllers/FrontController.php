@@ -22,7 +22,7 @@ class FrontController extends Controller
     public function home(Request $request)
     {
 
-      $content = Post::select('posts.url as url')
+      $content = Post::select('posts.url as url', 'contents.path as path', 'contents.title as title')
       ->join('contents','contents.id','=','posts.content_id')
       ->where('operator_id', $request->OpID)
       ->where('published_date', '<=', \Carbon\Carbon::now()->format('Y-m-d'))
@@ -79,6 +79,7 @@ class FrontController extends Controller
     public function meal(Content $content)
     {
         $content = Content::whereId($content->id)->operatorsopid()->first();
+        
         $hjrri_date = $this->hjrri_date_cal();
         return view("front.innercontent", compact("content", "hjrri_date"));
     }
