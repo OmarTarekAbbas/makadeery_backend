@@ -23,13 +23,11 @@
     @endforeach
     -->
 
-
-
     <section class="inner_category">
       <div class="row m-0">
         <div class="col-12">
           <video class="video rounded" controls>
-            <source src="{{$content->path}}" type="video/mp4">
+            <source src="{{url('/uploads/content/path/'.$content->path)}}" type="video/mp4">
           </video>
         </div>
 
