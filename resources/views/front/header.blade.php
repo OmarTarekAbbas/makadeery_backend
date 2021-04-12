@@ -30,7 +30,7 @@
           </a>
         </li>
         <li>
-          <a href="{{route('search', ['search'=> 'وجبات رمضان'])}}" class="link text-capitalize link_href">وجبات رمضان
+          <a href="{{route('contents', ['category_id' => '24' ,'category_title' => 'رمضان', 'subcategory_title' => 'رمضان'])}}" class="link text-capitalize link_href">وجبات رمضان
             <!-- @include("front.svg.meat") -->
           </a>
         </li>

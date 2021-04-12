@@ -59,7 +59,7 @@ class FrontController extends Controller
      */
     public function listContents(Request $request)
     {
-        $contents = Content::select('contents.*', 'contents.id as content_id')->with(['category'])->search($this->filters())->paginate(get_limit_paginate());
+        $contents = Content::select('contents.*', 'contents.id as content_id')->orderBy('created_at', 'DESC')->with(['category'])->search($this->filters())->paginate(get_limit_paginate());
 
         if ($request->ajax()) {
             $html = view("front.load_contents", compact("contents"))->render();
