@@ -26,11 +26,31 @@
       <ul id="accordion" class="accordion list-unstyled">
         <li id="indexed" class="">
           <a href="{{url('')}}" class="link text-capitalize link_href">الرئيسية
-            @include("front.svg.home")
+            <!-- @include("front.svg.home") -->
+          </a>
+        </li>
+        <li>
+          <a href="{{route('search', ['search'=> 'وجبات رمضان'])}}" class="link text-capitalize link_href">وجبات رمضان
+            <!-- @include("front.svg.meat") -->
           </a>
         </li>
 
+        @php
+          $content = \App\Post::select('posts.url as url')
+          ->join('contents','contents.id','=','posts.content_id')
+          ->where('operator_id', request('OpID'))
+          ->where('published_date', '<=', \Carbon\Carbon::now()->format('Y-m-d'))
+          ->where('active', 1)
+          ->orderBy('published_date', 'Desc')->first();
+        @endphp
         <li>
+          <a href="{{isset($content) && $content != null ? $content->url : 'javascript:void(0)'}}" class="link text-capitalize link_href">محتوى اليوم
+            <!-- @include("front.svg.fish") -->
+          </a>
+        </li>
+
+
+        <!--<li>
           <a href="{{route('search', ['search'=> 'لحوم'])}}" class="link text-capitalize link_href">لحوم
             @include("front.svg.meat")
           </a>
@@ -46,7 +66,7 @@
           <a href="{{route('search', ['search'=> 'فراخ'])}}" class="link text-capitalize link_href">فراخ
             @include("front.svg.chicken")
           </a>
-        </li>
+        </li>-->
       </ul>
     </nav>
 
