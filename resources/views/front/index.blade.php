@@ -23,23 +23,25 @@
     @endforeach
     -->
 
-    <section class="inner_category">
-      <div class="row m-0">
-        <div class="col-12">
-          <video class="video rounded" controls>
-            <source src="{{url('/uploads/content/path/'.$content->path)}}" type="video/mp4">
-          </video>
-        </div>
+    @if(isset($content) && $content!=null)
+      <section class="inner_category">
+        <div class="row m-0">
+          <div class="col-12">
+            <video class="video rounded" controls>
+              <source src="{{url('/uploads/content/path/'.$content->path)}}" type="video/mp4">
+            </video>
+          </div>
 
-        <div class="col-12">
-          <div class="episode">
-            <h5 class="episode_title">{{$content->title}}</h5>
+          <div class="col-12">
+            <div class="episode">
+              <h5 class="episode_title">{{$content->title}}</h5>
 
-            <span class="episode_num">{{$hjrri_date->day.' - '.$hjrri_date->month .' - '.$hjrri_date->year}}</span>
+              <span class="episode_num">{{$hjrri_date->day.' - '.$hjrri_date->month .' - '.$hjrri_date->year}}</span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    @endif
 
   </div>
 </section>
