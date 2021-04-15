@@ -59,7 +59,7 @@
           <h5 class="episode_title">{{$content->title}}</h5>
 
           <!-- <span class="episode_num">1- رمضان - <span class="episode_hegri">1442</span></span> -->
-          <span class="episode_num">{{$hjrri_date->day.' - '.$hjrri_date->month .' - '.$hjrri_date->year}}</span>
+          <span class="episode_num">{{($hjrri_date->day - 1).' - '.$hjrri_date->month .' - '.$hjrri_date->year}}</span>
         </div>
       </div>
     </div>
