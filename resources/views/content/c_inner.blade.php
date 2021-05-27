@@ -30,7 +30,7 @@
                                         <td>{{$value->patch_number}}</td> --}}
                                         <td class="visible-md visible-lg">
                                             <div class="btn-group">
-                                                <a class="btn btn-sm btn-success show-tooltip" title="Add Post" href="{{url("post/create?content_id=".$value->id."&title=".$value->title)}}" data-original-title="Add Post"><i class="fa fa-plus"></i></a>
+                                                <a class="btn btn-sm btn-success show-tooltip" title="Add Post" href="{{url("post/create?content_id=".$value->id)}}" data-original-title="Add Post"><i class="fa fa-plus"></i></a>
                                                 @if(count($value->operators) > 0)
                                                 <a class="btn btn-sm show-tooltip" title="Show Posts" href="{{url("content/$value->id")}}" data-original-title="show Posts"><i class="fa fa-step-forward"></i></a>
                                                 @endif

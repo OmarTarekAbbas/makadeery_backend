@@ -19,7 +19,7 @@ class CreateRamadanCategory extends Migration
         ]);
 
         $child = Category::Create([
-          'title' => 'رمضان',
+          'name' => 'STC Kuwait',
           'parent_id' => $categry->id,
         ]);
     }

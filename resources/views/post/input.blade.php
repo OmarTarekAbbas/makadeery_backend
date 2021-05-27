@@ -3,7 +3,7 @@
     <label for="textfield5" class="col-sm-3 col-lg-2 control-label">Content<span class="text-danger">*</span></label>
     <div class="col-sm-9 col-lg-10 controls">
         <select  name="content_id" class="form-control chosen-rtl">
-            <option id="category_{{ $_REQUEST['content_id'] }}" value="{{ $_REQUEST['content_id'] }}">{{ $_REQUEST['title']}}</option>
+            <option id="category_{{ $_REQUEST['content_id'] }}" value="{{ $_REQUEST['content_id'] }}">{{ $content->title }}</option>
         </select>
     </div>
 </div>

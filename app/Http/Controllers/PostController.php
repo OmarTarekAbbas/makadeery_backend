@@ -90,7 +90,8 @@ class PostController extends Controller
       $contents  = Content::all();
       $operators = Operator::all();
       $post      = NULL;
-      return view('post.form',compact('contents','operators','post'));
+      $content   = Content::find($_REQUEST['content_id']);
+      return view('post.form',compact('contents','operators','post', 'content'));
     }
 
     /**
